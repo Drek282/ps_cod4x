@@ -18,20 +18,20 @@
  *	You should have received a copy of the GNU General Public License
  *	along with PsychoStats.  If not, see <http://www.gnu.org/licenses/>.
  *
- *	Version: $Id: cod.php 498 2008-06-19 16:12:15Z lifo $
+ *	Version: $Id: cod4x.php 498 2008-06-19 16:12:15Z lifo $
  *
- *	PS::cod class for Call of Duty game support
+ *	PS::cod4x class for Call of Duty game support
  *	
  */
 if (!defined("PSYCHOSTATS_PAGE")) die("Unauthorized access to " . basename(__FILE__));
-if (defined("CLASS_PS_COD_PHP")) return 1;
-define("CLASS_PS_COD_PHP", 1);
+if (defined("CLASS_PS_COD4X_PHP")) return 1;
+define("CLASS_PS_COD4X_PHP", 1);
 
 include_once(__DIR__ . '/PS.php');
 
-class PS_cod extends PS {
+class PS_cod4x extends PS {
 
-var $class = 'PS::cod';
+var $class = 'PS::cod4x';
 
 var $CLAN_MODTYPES = array(
 	'allieskills'		=> '+',
@@ -51,10 +51,10 @@ var $CLAN_MODTYPES = array(
 );
 
 
-function PS_cod(&$db) {
+function PS_cod4x(&$db) {
 	parent::PS($db);
 	$this->CLAN_MAP_MODTYPES = $this->CLAN_MODTYPES;
-	$this->cod_remove_columns = array('headshotkills','headshotkillspct','accuracy');
+	$this->cod4x_remove_columns = array('headshotkills','headshotkillspct','accuracy');
 }
 
 function worldid_noun($plural = false) {
@@ -69,7 +69,7 @@ function add_map_player_list_mod($map, $setup = array()) {
 
 function index_table_mod(&$table) {
 	global $cms;
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 	$table->insert_columns(
 		array( 
 			'flagscaptured' => array( 'label' => $cms->trans('Flags'), 'tooltip' => $cms->trans("Flags captured") ), 
@@ -92,28 +92,28 @@ function maps_table_mod(&$table) {
 }
 
 function weapons_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 function weapon_players_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 
 function clans_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 
 function clan_weapons_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 function clan_players_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 
 function player_sessions_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 function player_weapons_table_mod(&$table) {
-	$table->remove_columns($this->cod_remove_columns);
+	$table->remove_columns($this->cod4x_remove_columns);
 }
 
 
@@ -184,6 +184,6 @@ function team_wins($value, $data) {
 	return $bar;
 }
 
-} // END of PS::cod
+} // END of PS::cod4x
 
 ?>
