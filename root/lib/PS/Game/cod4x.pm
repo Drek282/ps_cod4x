@@ -45,7 +45,7 @@ sub _init {
 	my $self = shift;
 	$self->SUPER::_init;
 
-	# TODO: 'gamestart' is going to have to be user changable via config or command line.
+	# 'gamestart' is parsed from server logs in event_cod4x_init.
 	$self->{gamestart} = time;
 
 	$self->{min} = undef;
