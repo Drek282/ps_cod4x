@@ -26,20 +26,20 @@ use warnings;
 use base qw( PS::Player );
 
 our $TYPES = {
-	coalitionkills		=> '+',
-	coalitionkillspct		=> [ percent2 => qw( coalitionkills allegiancekills ) ],
-	allegiancekills		=> '+',
-	allegiancekillspct		=> [ percent2 => qw( allegiancekills coalitionkills ) ],
-	coalitiondeaths		=> '+',
-	allegiancedeaths		=> '+',
-	joinedcoalition		=> '+',
-	joinedallegiance		=> '+',
-	coalitionwon		=> '+',
-	coalitionwonpct		=> [ percent2 => qw( coalitionwon allegiancewon ) ],
-	allegiancewon			=> '+',
-	allegiancewonpct		=> [ percent2 => qw( allegiancewon coalitionwon ) ],
-	coalitionlost		=> '+',
-	allegiancelost		=> '+',
+	allieskills		=> '+',
+	allieskillspct		=> [ percent2 => qw( allieskills axiskills ) ],
+	axiskills		=> '+',
+	axiskillspct		=> [ percent2 => qw( axiskills allieskills ) ],
+	alliesdeaths		=> '+',
+	axisdeaths		=> '+',
+	joinedallies		=> '+',
+	joinedaxis		=> '+',
+	allieswon		=> '+',
+	allieswonpct		=> [ percent2 => qw( allieswon axiswon ) ],
+	axiswon			=> '+',
+	axiswonpct		=> [ percent2 => qw( axiswon allieswon ) ],
+	allieslost		=> '+',
+	axislost		=> '+',
 };
 
 # Player map stats are the same as the basic stats
