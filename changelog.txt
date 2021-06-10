@@ -2,5 +2,5 @@
 
 
 Version 3.2.8b (in progress)
-[Changed] Call of Duty 4 support officially dropped.  Code is untested.
 [Changed] Cally of Duty 4X support separated from Call of Duty 4 support.
+[Fixed] Time stamp for game starts now accurately parses time from server logs.

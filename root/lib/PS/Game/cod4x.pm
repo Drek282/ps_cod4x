@@ -28,6 +28,7 @@ use base qw( PS::Game );
 use util qw( :net :date bench print_r );
 use Encode;
 use Time::Local qw( timelocal_nocheck );
+use Date::Manip;
 use PS::Player;
 
 our $VERSION = '1.00.' . ('$Rev: 514 $' =~ /(\d+)/ || '000')[0];
@@ -305,6 +306,11 @@ sub event_cod4x_init {
 	#	}
 	#	$self->{cod4x_shutdown} = 0;
 	#}
+
+	# parse 'gamestart'.
+	my $gamestart_datestring = $props->{g_mapStartTime};
+	my $gamestart_epoch = UnixDate(ParseDate($gamestart_datestring), "%s");
+	$self->{gamestart} = $gamestart_epoch;
 
 	# start up the new map in memory
 	$self->{curmap} = $props->{mapname};
