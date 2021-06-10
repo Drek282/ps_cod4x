@@ -1285,7 +1285,10 @@
 			if (this.game.gametype == 'cod4x') {
 				if (t == 1) {
 					name = 'SPECTATOR';
-				}
+					switch (t) {
+						case 2: name = 'ALLEGIANCE'; break;
+						case 3: name = 'COALITION'; break;
+					}
 			}
 			return name;
 		},
@@ -2258,8 +2261,7 @@
 	// returns an array of the teams for the current game
 	function team_names(gametype, modtype) {
 		if (gametype == 'cod4x') {
-			switch (modtype) {
-			}
+            case 'cstrikes': return [ 'ALLEGIANCE', 'COALITION' ];
 		}
 		return [ 'TEAM1', 'TEAM2'] ;
 	};

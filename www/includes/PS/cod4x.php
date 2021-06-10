@@ -149,7 +149,7 @@ function player_left_column_mod(&$plr, &$theme) {
 				'pct1'	 	=> $plr['allegiancekillspct'],
 				'pct2'	 	=> $plr['coalitionkillspct'],
 				'title1'	=> commify($plr['allegiancekills']) . ' ' . $cms->trans('allegiance') . ' (' . $plr['allegiancekillspct'] . '%)',
-				'title2'	=> commify($plr['coalitionkills']) . ' ' . $cms->trans('ally') . ' (' . $plr['coalitionkillspct'] . '%)',
+				'title2'	=> commify($plr['coalitionkills']) . ' ' . $cms->trans('coalition') . ' (' . $plr['coalitionkillspct'] . '%)',
 				'width'		=> 130
 			)
 		);
