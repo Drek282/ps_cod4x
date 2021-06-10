@@ -26,18 +26,18 @@ use warnings;
 use base qw( PS::Map );
 
 our $TYPES = {
-	allieskills		=> '+',
-	allieskillspct		=> [ percent2 => qw( allieskills axiskills ) ],
-	axiskills		=> '+',
-	axiskillspct		=> [ percent2 => qw( axiskills allieskills ) ],
-	joinedallies		=> '+',
-	joinedaxis		=> '+',
-	allieswon		=> '+',
-	allieswonpct		=> [ percent2 => qw( allieswon axiswon ) ],
-	axiswon			=> '+',
-	axiswonpct		=> [ percent2 => qw( axiswon allieswon ) ],
-	allieslost		=> '+',
-	axislost		=> '+',
+	coalitionkills		=> '+',
+	coalitionkillspct		=> [ percent2 => qw( coalitionkills allegiancekills ) ],
+	allegiancekills		=> '+',
+	allegiancekillspct		=> [ percent2 => qw( allegiancekills coalitionkills ) ],
+	joinedcoalition		=> '+',
+	joinedallegiance		=> '+',
+	coalitionwon		=> '+',
+	coalitionwonpct		=> [ percent2 => qw( coalitionwon allegiancewon ) ],
+	allegiancewon			=> '+',
+	allegiancewonpct		=> [ percent2 => qw( allegiancewon coalitionwon ) ],
+	coalitionlost		=> '+',
+	allegiancelost		=> '+',
 };
 
 # override parent methods to combine types
