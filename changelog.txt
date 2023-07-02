@@ -1,7 +1,8 @@
 --- DREK ---
 
 
-Version 3.2.8b (in progress)
+Version 3.2.8n (in progress)
 * [Changed] Cally of Duty 4X support separated from Call of Duty 4 support.
 * [Fixed] Time stamp for game starts now accurately parses time from server logs.
 * [Fixed] PHP 8 errors/warnings.
+* [Changed] Version string to indicate "nightly" status of current working version.
